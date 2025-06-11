@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from '../../../../shared/components/navbar/navbar.component';
 import { HeroComponent } from '../../components/hero/hero.component';
-import { OurDesignsComponent } from '../../components/ourDesigns/ourDesigns.component';
+import { OurDesignsComponent } from '../../components/our-designs/our-designs.component';
 
 @Component({
   selector: 'app-home-page',
