@@ -1,60 +1,84 @@
-# Bananas 3D
+# 🧑‍💻 Bananas 3D — Modern 3D Printing SPA
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+Landing page and showcase application built with Angular 19 and Tailwind CSS. It provides a responsive hero section, a design carousel and simple components to request project quotes.
 
-## Development server
+## 🗒️ Table of Contents
+- [Project Overview](#project-overview)
+- [Tech Stack](#tech-stack)
+- [Architecture & Technical Decisions](#architecture--technical-decisions)
+- [Installation & Setup](#installation--setup)
+- [Project Structure](#project-structure)
+- [Best Practices & Conventions](#best-practices--conventions)
+- [Contributing](#contributing)
+- [License](#license)
 
-To start a local development server, run:
+## Project Overview
+Bananas 3D is a modular Single Page Application that presents the services of a 3D printing company. It features a hero section, a carousel of sample designs and reusable UI components. The project focuses on clean structure and modern responsive design using Tailwind CSS.
+
+## Tech Stack
+- **Angular 19** 🌟 — Framework for building single page applications.
+- **TypeScript** 🔵 — Static typing for maintainable code.
+- **Tailwind CSS** 🌈 — Utility‑first styling.
+- **FontAwesome** ★ — Icon library used throughout the UI.
+- **RxJS** 🔁 — Reactive utilities bundled with Angular.
+- **Jasmine/Karma** 🧨 — Unit testing environment.
+
+## Architecture & Technical Decisions
+- **Modules and components** organized under `src/app` to keep features isolated.
+- **Signal-based components** keep local state minimal and reactive.
+- **FontAwesome integration** centralized in `icons.config.ts` for easy maintenance.
+- **Tailwind** enabled via PostCSS for consistent styling without custom configuration.
+- **Strict TypeScript** settings enforce safer code.
+
+## Installation & Setup
+Make sure you have Node.js 20.x installed.
 
 ```bash
+git clone <repo-url>
+cd bananas-3d
+npm install
+
+# Start local development server
+npm start
+# or
 ng serve
+
+# App runs on http://localhost:4200
+
+# Run unit tests
+npm test
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+## Project Structure
+```
+src/
+├── app/
+│   ├── app.component.ts       # Root component
+│   ├── app.routes.ts          # Routes configuration
+│   ├── app.config.ts          # Angular providers
+│   ├── icons.config.ts        # FontAwesome icon setup
+│   ├── modules/               # Feature modules
+│   │   └── landing/           # Landing page components
+│   └── shared/                # Reusable components and models
+├── index.html                 # App entry point
+├── main.ts                    # Bootstrap logic
+└── styles.css                 # Global styles (Tailwind)
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Best Practices & Conventions
+- Semantic commit messages for clarity.
+- Small, functional components with strict typing.
+- Utility-first styling via Tailwind classes.
+- Keep shared UI elements under `src/app/shared` for reuse.
 
-```bash
-ng generate --help
-```
+## Contributing
+1. Fork the repository and create a feature branch.
+2. Write your code and add tests if applicable.
+3. Make sure the app builds and `npm test` runs without errors.
+4. Open a Pull Request describing your changes.
 
-## Building
+All contributions are welcome!
 
-To build the project run:
+## License
+This project is licensed under the [MIT License](LICENSE).
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-# Bananas-3d
