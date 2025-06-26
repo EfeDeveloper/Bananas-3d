@@ -1,0 +1,42 @@
+<section id="services" class="bg-white py-16">
+  <div class="mx-auto px-4 container">
+    <div class="mb-12 text-center">
+      <app-badge label="Nuestros Servicios" />
+      <h2 class="mb-4 font-bold text-gray-900 text-4xl">
+        ¿Qué Podemos Hacer Por Ti?
+      </h2>
+    </div>
+
+    <div class="gap-8 grid md:grid-cols-3">
+      @for (service of ourServices(); track service.title) {
+      <section class="shadow-lg hover:shadow-xl border-0 transition-shadow">
+        <div class="p-8 text-center">
+          <div
+            class="flex justify-center items-center bg-gradient-to-r from-purple-600 to-pink-600 mx-auto mb-6 rounded-full w-16 h-16"
+          >
+            @if(service.icon){
+            <fa-icon
+              [icon]="['fas', `${service.icon}`]"
+              size="2x"
+              class="text-white"
+            />
+            }@else {
+            <fa-icon
+              [icon]="['fas', 'question']"
+              size="2x"
+              class="text-white"
+            />
+            }
+          </div>
+          <h3 class="mb-4 font-bold text-gray-900 text-xl">
+            {{ service.title }}
+          </h3>
+          <p class="text-gray-600">
+            {{ service.description }}
+          </p>
+        </div>
+      </section>
+      }
+    </div>
+  </div>
+</section>

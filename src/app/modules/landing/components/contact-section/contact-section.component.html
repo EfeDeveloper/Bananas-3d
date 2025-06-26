@@ -1,0 +1,28 @@
+<section id="contact" class="bg-gray-50 py-16">
+  <div class="mx-auto px-4 container">
+    <div class="mb-12 text-center">
+      <h2 class="mb-4 font-bold text-gray-900 text-4xl">Ponte En Contacto</h2>
+      <p class="text-gray-600 text-xl">
+        Estamos aquí para ayudarte con tu próximo proyecto
+      </p>
+    </div>
+
+    <div class="gap-8 grid md:grid-cols-3 mx-auto max-w-4xl">
+      @for(contact of contacts(); track contact.title){
+      <div class="text-center">
+        <div
+          class="flex justify-center items-center bg-gradient-to-r from-purple-600 to-pink-600 mx-auto mb-4 rounded-full w-16 h-16"
+        >
+          <fa-icon
+            [icon]="['fas', contact.icon]"
+            size="2x"
+            class="text-white"
+          />
+        </div>
+        <h3 class="mb-2 font-semibold text-gray-900">{{ contact.title }}</h3>
+        <p class="text-gray-600">{{ contact.value }}</p>
+      </div>
+      }
+    </div>
+  </div>
+</section>

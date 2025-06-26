@@ -7,6 +7,13 @@ import {
   faChevronLeft as fasChevronLeft,
   faImage as fasImage,
   faCloud as fasCloud,
+  faQuestion as fasQuestion,
+  faBolt as fasBolt,
+  faToolbox as fasToolbox,
+  faStar as fasStar,
+  faEnvelope as fasEnvelope,
+  faPhone as fasPhone,
+  faLocationPin as fasLocationPin,
 } from '@fortawesome/free-solid-svg-icons';
 
 // This function initializes the FontAwesome icon library with specific icons, import and add the icons here.
@@ -18,6 +25,13 @@ export function initializeIcons(library: FaIconLibrary): void {
     fasChevronRight,
     fasChevronLeft,
     fasImage,
-    fasCloud
+    fasCloud,
+    fasQuestion,
+    fasBolt,
+    fasToolbox,
+    fasStar,
+    fasEnvelope,
+    fasPhone,
+    fasLocationPin
   );
 }

@@ -1,0 +1,55 @@
+<footer class="bg-gray-900 py-12 text-white">
+  <div class="mx-auto px-4 container">
+    <div class="gap-8 grid md:grid-cols-4">
+      <!-- Branding -->
+      <div>
+        <div class="flex items-center space-x-2 mb-4">
+          <div
+            class="flex justify-center items-center bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg w-8 h-8"
+          >
+            <fa-icon [icon]="['fas', 'print']" size="1x" class="text-white" />
+          </div>
+          <span class="font-bold text-xl">Bananas 3D</span>
+        </div>
+        <p class="text-gray-400">
+          Transformando ideas en realidad a través de la impresión 3D de alta
+          calidad.
+        </p>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="mb-4 font-semibold">Servicios</h4>
+        <ul class="space-y-2 text-gray-400">
+          @for (item of servicios; track item) {
+          <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+
+      <!-- Enterprise -->
+      <div>
+        <h4 class="mb-4 font-semibold">Empresa</h4>
+        <ul class="space-y-2 text-gray-400">
+          @for (item of empresa; track item) {
+          <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h4 class="mb-4 font-semibold">Legal</h4>
+        <ul class="space-y-2 text-gray-400">
+          @for (item of legal; track item) {
+          <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-8 pt-8 border-gray-800 border-t text-gray-400 text-center">
+      <p>&copy; {{ year }} Bananas 3D. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,41 @@
+<section class="bg-white py-16">
+  <div class="mx-auto px-4 container">
+    <div class="mb-12 text-center">
+      <h2 class="mb-4 font-bold text-gray-900 text-4xl">
+        Lo Que Dicen Nuestros Clientes
+      </h2>
+    </div>
+
+    <div class="gap-8 grid md:grid-cols-2 lg:grid-cols-3">
+      @for (testimonial of testimonials(); track testimonial.name){
+      <div class="bg-white shadow-lg p-6 border-0 rounded-lg">
+        <div class="flex items-center mb-4">
+          @for(star of [1,2,3,4,5]; track star){
+          <fa-icon
+            [icon]="['fas', 'star']"
+            size="1x"
+            class="mr-1 text-yellow-400"
+          />
+          }
+        </div>
+        <p class="mb-4 text-gray-600">"{{ testimonial.review }}"</p>
+        <div class="flex items-center">
+          <div
+            class="flex justify-center items-center bg-gradient-to-r from-purple-600 to-pink-600 mr-3 rounded-full w-10 h-10"
+          >
+            <span class="font-semibold text-white text-sm">{{
+              getInitial(testimonial.name)
+            }}</span>
+          </div>
+          <div>
+            <div class="font-semibold text-gray-900">
+              {{ testimonial.name }}
+            </div>
+            <div class="text-gray-600 text-sm">{{ testimonial.role }}</div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>

@@ -3,10 +3,16 @@ import { CurrencyPipe } from '@angular/common';
 import { Component, computed, Input, signal } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BadgeComponent } from '@/shared/components/badge/badge.component';
+import { AssetNotFoundComponent } from '../asset-not-found/asset-not-found.component';
 
 @Component({
   selector: 'app-carousel-showcases',
-  imports: [FontAwesomeModule, BadgeComponent, CurrencyPipe],
+  imports: [
+    FontAwesomeModule,
+    BadgeComponent,
+    CurrencyPipe,
+    AssetNotFoundComponent,
+  ],
   templateUrl: './carousel-showcases.component.html',
 })
 export class CarouselShowcasesComponent {
