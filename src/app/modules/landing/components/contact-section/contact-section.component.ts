@@ -20,7 +20,7 @@ export class ContactSectionComponent {
       value: '+57 300 2490913',
     },
     {
-      icon: 'location-pin',
+      icon: 'location-dot',
       title: 'Ubicación',
       value: 'Bogotá, Colombia',
     },

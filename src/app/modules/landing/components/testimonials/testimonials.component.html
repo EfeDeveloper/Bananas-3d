@@ -8,7 +8,7 @@
 
     <div class="gap-8 grid md:grid-cols-2 lg:grid-cols-3">
       @for (testimonial of testimonials(); track testimonial.name){
-      <div class="bg-white shadow-lg p-6 border-0 rounded-lg">
+      <div class="bg-white shadow-lg p-6 border border-amber-100 rounded-lg">
         <div class="flex items-center mb-4">
           @for(star of [1,2,3,4,5]; track star){
           <fa-icon
@@ -18,12 +18,12 @@
           />
           }
         </div>
-        <p class="mb-4 text-gray-600">"{{ testimonial.review }}"</p>
+        <p class="mb-4 text-gray-700">"{{ testimonial.review }}"</p>
         <div class="flex items-center">
           <div
-            class="flex justify-center items-center bg-gradient-to-r from-purple-600 to-pink-600 mr-3 rounded-full w-10 h-10"
+            class="flex justify-center items-center bg-gradient-to-r from-amber-400 to-yellow-500 mr-3 rounded-full w-10 h-10"
           >
-            <span class="font-semibold text-white text-sm">{{
+            <span class="font-semibold text-black text-sm">{{
               getInitial(testimonial.name)
             }}</span>
           </div>
