@@ -7,12 +7,11 @@ import { Component, computed, Input, signal } from '@angular/core';
 export class BadgeComponent {
   @Input() label: string = 'Badge';
   @Input() customClass: string =
-    'bg-purple-100 text-purple-700 hover:bg-purple-100';
+    'bg-amber-100 text-amber-800 hover:bg-amber-100 border border-amber-200';
 
   labelSig = signal(this.label);
-  class = signal(this.customClass);
 
   classes = computed(
-    () => `${this.class()}} text-xs font-medium me-2 px-2.5 py-0.5 rounded-xl`
+    () => `${this.customClass} text-xs font-medium px-2.5 py-1 rounded-xl`
   );
 }

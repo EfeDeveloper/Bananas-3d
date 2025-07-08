@@ -13,7 +13,7 @@ import {
   faStar as fasStar,
   faEnvelope as fasEnvelope,
   faPhone as fasPhone,
-  faLocationPin as fasLocationPin,
+  faLocationDot as fasLocationDot,
 } from '@fortawesome/free-solid-svg-icons';
 
 // This function initializes the FontAwesome icon library with specific icons, import and add the icons here.
@@ -32,6 +32,6 @@ export function initializeIcons(library: FaIconLibrary): void {
     fasStar,
     fasEnvelope,
     fasPhone,
-    fasLocationPin
+    fasLocationDot
   );
 }

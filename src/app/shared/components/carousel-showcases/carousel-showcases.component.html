@@ -1,16 +1,16 @@
 <div class="relative mx-auto max-w-4xl">
-  <div class="shadow-lg border-0 rounded-lg">
+  <div class="shadow-xl border-1 border-amber-200 rounded-lg">
     <div class="p-0">
-      <div class="gap-0 grid md:grid-cols-2">
+      <div class="gap-0 grid lg:grid-cols-2">
         <div
-          class="relative flex justify-center items-center bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-lg md:rounded-t-none md:rounded-l-lg h-80 md:h-96 overflow-hidden"
+          class="relative flex justify-center items-center bg-gradient-to-br from-amber-100 via-yellow-100 to-amber-200 rounded-t-lg lg:rounded-t-none lg:rounded-l-lg h-80 lg:h-96 overflow-hidden"
         >
           @if (itemSelected()?.imageUrl) {
           <picture class="flex justify-center items-center w-full h-full">
             <img
               [src]="itemSelected()?.imageUrl"
               [alt]="`${itemSelected()?.title} Image` || 'Design Image'"
-              class="rounded-t-lg md:rounded-t-none md:rounded-l-lg w-full h-full object-cover"
+              class="rounded-t-lg lg:rounded-t-none lg:rounded-l-lg w-full h-full object-cover"
             />
           </picture>
           } @else {
@@ -18,29 +18,30 @@
           }
         </div>
 
-        <div class="flex flex-col justify-center p-8 h-80 md:h-96">
-          <div class="flex flex-wrap gap-1 mb-4 max-w-xs min-h-[32px]">
+        <div
+          class="flex flex-col justify-center mt-8 lg:mt-auto p-8 h-80 lg:h-96"
+        >
+          <div class="flex flex-wrap gap-1 mb-4 min-h-[32px]">
             @for (item of itemSelected()?.badges; track item) {
             <app-badge [label]="item || ''" />
             }
           </div>
 
           <h3
-            class="mb-4 max-w-xs min-h-[32px] font-bold text-gray-900 text-2xl truncate"
+            class="mb-4 min-h-[32px] font-bold text-gray-900 text-2xl truncate"
             [attr.title]="itemSelected()?.title"
-            style="line-height: 2rem"
           >
             {{ itemSelected()?.title || "No Title Available" }}
           </h3>
           <p
-            class="mb-6 max-w-xs min-h-[72px] text-gray-600 line-clamp-3"
+            class="mb-6 max-w-xs min-h-[72px] text-gray-700 line-clamp-3"
             [attr.title]="itemSelected()?.description"
           >
             {{ itemSelected()?.description || "No description available." }}
           </p>
           <div class="flex justify-between items-center min-h-[40px]">
             <span
-              class="max-w-[150px] font-bold text-purple-600 text-3xl truncate"
+              class="max-w-[150px] font-bold text-amber-600 text-3xl truncate"
               [attr.title]="
                 itemSelected()?.price | currency : 'USD' : 'symbol' : '1.2-2'
               "
@@ -49,8 +50,7 @@
               }}</span
             >
             <button
-              class="bg-gradient-to-r from-purple-600 hover:from-purple-700 to-pink-600 hover:to-pink-700 px-3 py-2 rounded-lg min-w-[150px] max-w-[180px] text-white truncate cursor-pointer"
-              [attr.title]="'Solicitar Cotización'"
+              class="bg-gradient-to-r from-amber-400 hover:from-amber-500 to-yellow-500 hover:to-yellow-600 px-3 py-2 rounded-lg min-w-[150px] max-w-[180px] font-semibold text-black truncate cursor-pointer"
             >
               Solicitar Cotización
             </button>
@@ -63,18 +63,22 @@
   <!-- Navigation Buttons -->
   <button
     (click)="prevSlide()"
-    class="top-1/2 left-4 z-10 absolute flex justify-center items-center bg-white hover:bg-gray-50 shadow-lg rounded-full w-12 h-12 transition-colors -translate-y-1/2 cursor-pointer"
+    class="top-1/2 left-4 z-10 absolute flex justify-center items-center bg-white hover:bg-amber-50 shadow-lg border border-amber-200 rounded-full w-12 h-12 transition-colors -translate-y-1/2 cursor-pointer"
   >
-    <fa-icon [icon]="['fas', 'chevron-left']" size="1x" class="text-gray-600" />
+    <fa-icon
+      [icon]="['fas', 'chevron-left']"
+      size="1x"
+      class="text-amber-700"
+    />
   </button>
   <button
     (click)="nextSlide()"
-    class="top-1/2 right-4 z-10 absolute flex justify-center items-center bg-white hover:bg-gray-50 shadow-lg rounded-full w-12 h-12 transition-colors -translate-y-1/2 cursor-pointer"
+    class="top-1/2 right-4 z-10 absolute flex justify-center items-center bg-white hover:bg-amber-50 shadow-lg border border-amber-200 rounded-full w-12 h-12 transition-colors -translate-y-1/2 cursor-pointer"
   >
     <fa-icon
       [icon]="['fas', 'chevron-right']"
       size="1x"
-      class="text-gray-600"
+      class="text-amber-700"
     />
   </button>
 
@@ -85,10 +89,10 @@
       type="button"
       (click)="currentSlide.set(index)"
       class="w-3 h-3 rounded-full transition-colors
-          focus:outline-none
+          focus:outline-none cursor-pointer
           {{
         index === currentSlide()
-          ? 'bg-purple-600'
+          ? 'bg-amber-500'
           : 'bg-gray-300 hover:bg-gray-400'
       }}"
       [attr.aria-label]="'Ir al slide ' + (index + 1)"
